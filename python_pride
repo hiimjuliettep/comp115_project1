@@ -1,0 +1,83 @@
+import turtle
+    
+turtle.Screen().bgcolor("white") #I like the colour :)
+t = turtle.Turtle()
+t.up()                      #picks up my "pen" until ready
+t.backward(150)
+t.left(90)
+t.forward(100)
+t.right(90)
+
+pole_length = 300       #some measurements to be reused later
+pole_top = 15
+
+def draw_pole(t, pole_length, pole_top):
+    pass
+    t.color("black")
+    t.down()
+    t.fillcolor("black")
+    t.begin_fill()
+    t.forward(pole_top)
+    t.right(90)
+    t.forward(pole_length)
+    t.right(90)
+    t.forward(pole_top)
+    t.right(90)
+    t.forward(pole_length)
+    t.end_fill()
+    t.up()
+    
+draw_pole(t, pole_length, pole_top) 
+
+t.right(90)    #now we can start drawing the flag
+t.forward(pole_top)
+t.down()
+
+for _ in range(4):
+    t.forward(275)
+    t.right(90)
+
+def draw_bluesegment(t):
+    t.begin_fill()    #first blue flag segment
+    t.fillcolor("cyan")
+    t.forward(275)
+    t.right(90)
+    t.forward(55)
+    t.right(90)
+    t.forward(275)
+    t.end_fill()
+
+def draw_pinksegment(t):
+    t.left(90)     #first pink segment
+    t.forward(55)
+    t.begin_fill()
+    t.fillcolor("pink")
+    t.left(90)
+    t.forward(275)
+    t.left(90)
+    t.forward(55)
+    t.left(90)
+    t.forward(275)
+    t.left(90)
+    t.forward(55)
+    t.left(90)
+    t.end_fill()
+ 
+draw_bluesegment(t)
+draw_pinksegment(t)
+t.right(90)
+t.forward(55)
+t.left(90)
+
+for _ in range(2):
+    t.forward(275)
+    t.left(90)
+    t.forward(55)
+    t.left(90)
+
+t.left(180)    
+draw_pinksegment(t)
+draw_bluesegment(t)
+
+turtle.Screen().exitonclick()
+ 
